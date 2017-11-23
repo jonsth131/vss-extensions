@@ -1,0 +1,6 @@
+task/
+node_modules/
+*.js
+.taskkey
+*.vsix
+package-lock.json

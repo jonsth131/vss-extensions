@@ -1,0 +1,30 @@
+{
+    "name":  "unitybuild",
+    "version":  "1.0.2",
+    "description":  "Unity Build Task",
+    "main":  "index.js",
+    "scripts":  {
+                    "test":  "mocha tests/_suite.js"
+                },
+    "repository":  {
+                       "type":  "git",
+                       "url":  "git+https://github.com/jonsth131/vss-extensions.git"
+                   },
+    "bugs":  {
+                 "url":  "https://github.com/jonsth131/vss-extensions/issues"
+             },
+    "keywords":  [
+                     "unity"
+                 ],
+    "author":  "Jonas S",
+    "license":  "MIT",
+    "dependencies":  {
+                         "vsts-task-lib":  "^2.1.0"
+                     },
+    "devDependencies":  {
+                            "@types/mocha":  "^2.2.44",
+                            "@types/node":  "^8.0.53",
+                            "@types/q":  "^1.0.6",
+                            "typescript":  "^2.2.1"
+                        }
+}
