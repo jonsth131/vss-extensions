@@ -1,192 +1,192 @@
 {
-    "id":  "5cb92fe7-15e2-4cce-9343-e8c71d69e617",
-    "name":  "UnityBuild",
-    "friendlyName":  "Unity Build",
-    "description":  "Build task for Unity",
-    "helpMarkDown":  "",
-    "category":  "Build",
-    "visibility":  [
-                       "Build"
-                   ],
-    "author":  "Jonas S",
-    "version":  {
-                    "Major":  1,
-                    "Minor":  0,
-                    "Patch":  2
-                },
-    "demands":  [
-                    "unity"
-                ],
-    "instanceNameFormat":  "Build Unity project $(projectPath)",
-    "groups":  [
-                   {
-                       "name":  "targets",
-                       "displayName":  "Build targets",
-                       "isExpanded":  true
-                   },
-                   {
-                       "name":  "advanced",
-                       "displayName":  "Advanced",
-                       "isExpanded":  false
-                   }
-               ],
-    "inputs":  [
-                   {
-                       "name":  "projectPath",
-                       "type":  "filePath",
-                       "label":  "Unity project path",
-                       "defaultValue":  "",
-                       "required":  true,
-                       "helpMarkDown":  "Path to the Unity project to build"
-                   },
-                   {
-                       "name":  "win32standalone",
-                       "type":  "boolean",
-                       "label":  "32-bit Windows player",
-                       "defaultValue":  "false",
-                       "required":  false,
-                       "helpMarkDown":  "",
-                       "groupName":  "targets"
-                   },
-                   {
-                       "name":  "win32standaloneOutput",
-                       "type":  "filePath",
-                       "label":  "Output for 32-bit Windows Player",
-                       "required":  true,
-                       "groupName":  "targets",
-                       "helpMarkDown":  "",
-                       "visibleRule":  "win32standalone = true"
-                   },
-                   {
-                       "name":  "win64standalone",
-                       "type":  "boolean",
-                       "label":  "64-bit Windows player",
-                       "defaultValue":  "false",
-                       "required":  false,
-                       "helpMarkDown":  "",
-                       "groupName":  "targets"
-                   },
-                   {
-                       "name":  "win64standaloneOutput",
-                       "type":  "filePath",
-                       "label":  "Output for 64-bit Windows Player",
-                       "required":  true,
-                       "groupName":  "targets",
-                       "helpMarkDown":  "",
-                       "visibleRule":  "win64standalone = true"
-                   },
-                   {
-                       "name":  "osx32standalone",
-                       "type":  "boolean",
-                       "label":  "32-bit OSX player",
-                       "defaultValue":  "false",
-                       "required":  false,
-                       "helpMarkDown":  "",
-                       "groupName":  "targets"
-                   },
-                   {
-                       "name":  "osx32standaloneOutput",
-                       "type":  "filePath",
-                       "label":  "Output for 32-bit OSX Player",
-                       "required":  true,
-                       "groupName":  "targets",
-                       "helpMarkDown":  "",
-                       "visibleRule":  "osx32standalone = true"
-                   },
-                   {
-                       "name":  "osx64standalone",
-                       "type":  "boolean",
-                       "label":  "64-bit OSX player",
-                       "defaultValue":  "false",
-                       "required":  false,
-                       "helpMarkDown":  "",
-                       "groupName":  "targets"
-                   },
-                   {
-                       "name":  "osx64standaloneOutput",
-                       "type":  "filePath",
-                       "label":  "Output for 64-bit OSX Player",
-                       "required":  true,
-                       "groupName":  "targets",
-                       "helpMarkDown":  "",
-                       "visibleRule":  "osx64standalone = true"
-                   },
-                   {
-                       "name":  "osxUniversal",
-                       "type":  "boolean",
-                       "label":  "Universal OSX player",
-                       "defaultValue":  "false",
-                       "required":  false,
-                       "helpMarkDown":  "",
-                       "groupName":  "targets"
-                   },
-                   {
-                       "name":  "osxUniversalOutput",
-                       "type":  "filePath",
-                       "label":  "Output for Universal OSX Player",
-                       "required":  true,
-                       "groupName":  "targets",
-                       "helpMarkDown":  "",
-                       "visibleRule":  "osxUniversal = true"
-                   },
-                   {
-                       "name":  "linux32standalone",
-                       "type":  "boolean",
-                       "label":  "32-bit Linux player",
-                       "defaultValue":  "false",
-                       "required":  false,
-                       "helpMarkDown":  "",
-                       "groupName":  "targets"
-                   },
-                   {
-                       "name":  "linux32standaloneOutput",
-                       "type":  "filePath",
-                       "label":  "Output for 32-bit Linux Player",
-                       "required":  true,
-                       "groupName":  "targets",
-                       "helpMarkDown":  "",
-                       "visibleRule":  "linux32standalone = true"
-                   },
-                   {
-                       "name":  "linux64standalone",
-                       "type":  "boolean",
-                       "label":  "64-bit Linux player",
-                       "defaultValue":  "false",
-                       "required":  false,
-                       "helpMarkDown":  "",
-                       "groupName":  "targets"
-                   },
-                   {
-                       "name":  "linux64standaloneOutput",
-                       "type":  "filePath",
-                       "label":  "Output for 64-bit Linux Player",
-                       "required":  true,
-                       "groupName":  "targets",
-                       "helpMarkDown":  "",
-                       "visibleRule":  "linux64standalone = true"
-                   },
-                   {
-                       "name":  "linuxUniversal",
-                       "type":  "boolean",
-                       "label":  "Universal Linux player",
-                       "defaultValue":  "false",
-                       "required":  false,
-                       "helpMarkDown":  "",
-                       "groupName":  "targets"
-                   },
-                   {
-                       "name":  "linuxUniversalOutput",
-                       "type":  "filePath",
-                       "label":  "Output for Universal Linux Player",
-                       "required":  true,
-                       "groupName":  "targets",
-                       "helpMarkDown":  "",
-                       "visibleRule":  "linuxUniversal = true"
-                   }
-               ],
-    "execution":  {
-                      "Node":  {
-                                   "target":  "index.js"
-                               }
-                  }
+    "id": "5cb92fe7-15e2-4cce-9343-e8c71d69e617",
+    "name": "UnityBuild",
+    "friendlyName": "Unity Build",
+    "description": "Build task for Unity",
+    "helpMarkDown": "",
+    "category": "Build",
+    "visibility": [
+        "Build"
+    ],
+    "author": "Jonas S",
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 2
+    },
+    "demands": [
+        "unity"
+    ],
+    "instanceNameFormat": "Build Unity project $(projectPath)",
+    "groups": [
+        {
+            "name": "targets",
+            "displayName": "Build targets",
+            "isExpanded": true
+        },
+        {
+            "name": "advanced",
+            "displayName": "Advanced",
+            "isExpanded": false
+        }
+    ],
+    "inputs": [
+        {
+            "name": "projectPath",
+            "type": "filePath",
+            "label": "Unity project path",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Path to the Unity project to build"
+        },
+        {
+            "name": "win32standalone",
+            "type": "boolean",
+            "label": "32-bit Windows player",
+            "defaultValue": "false",
+            "required": false,
+            "helpMarkDown": "",
+            "groupName": "targets"
+        },
+        {
+            "name": "win32standaloneOutput",
+            "type": "filePath",
+            "label": "Output for 32-bit Windows Player",
+            "required": true,
+            "groupName": "targets",
+            "helpMarkDown": "",
+            "visibleRule": "win32standalone = true"
+        },
+        {
+            "name": "win64standalone",
+            "type": "boolean",
+            "label": "64-bit Windows player",
+            "defaultValue": "false",
+            "required": false,
+            "helpMarkDown": "",
+            "groupName": "targets"
+        },
+        {
+            "name": "win64standaloneOutput",
+            "type": "filePath",
+            "label": "Output for 64-bit Windows Player",
+            "required": true,
+            "groupName": "targets",
+            "helpMarkDown": "",
+            "visibleRule": "win64standalone = true"
+        },
+        {
+            "name": "osx32standalone",
+            "type": "boolean",
+            "label": "32-bit OSX player",
+            "defaultValue": "false",
+            "required": false,
+            "helpMarkDown": "",
+            "groupName": "targets"
+        },
+        {
+            "name": "osx32standaloneOutput",
+            "type": "filePath",
+            "label": "Output for 32-bit OSX Player",
+            "required": true,
+            "groupName": "targets",
+            "helpMarkDown": "",
+            "visibleRule": "osx32standalone = true"
+        },
+        {
+            "name": "osx64standalone",
+            "type": "boolean",
+            "label": "64-bit OSX player",
+            "defaultValue": "false",
+            "required": false,
+            "helpMarkDown": "",
+            "groupName": "targets"
+        },
+        {
+            "name": "osx64standaloneOutput",
+            "type": "filePath",
+            "label": "Output for 64-bit OSX Player",
+            "required": true,
+            "groupName": "targets",
+            "helpMarkDown": "",
+            "visibleRule": "osx64standalone = true"
+        },
+        {
+            "name": "osxUniversal",
+            "type": "boolean",
+            "label": "Universal OSX player",
+            "defaultValue": "false",
+            "required": false,
+            "helpMarkDown": "",
+            "groupName": "targets"
+        },
+        {
+            "name": "osxUniversalOutput",
+            "type": "filePath",
+            "label": "Output for Universal OSX Player",
+            "required": true,
+            "groupName": "targets",
+            "helpMarkDown": "",
+            "visibleRule": "osxUniversal = true"
+        },
+        {
+            "name": "linux32standalone",
+            "type": "boolean",
+            "label": "32-bit Linux player",
+            "defaultValue": "false",
+            "required": false,
+            "helpMarkDown": "",
+            "groupName": "targets"
+        },
+        {
+            "name": "linux32standaloneOutput",
+            "type": "filePath",
+            "label": "Output for 32-bit Linux Player",
+            "required": true,
+            "groupName": "targets",
+            "helpMarkDown": "",
+            "visibleRule": "linux32standalone = true"
+        },
+        {
+            "name": "linux64standalone",
+            "type": "boolean",
+            "label": "64-bit Linux player",
+            "defaultValue": "false",
+            "required": false,
+            "helpMarkDown": "",
+            "groupName": "targets"
+        },
+        {
+            "name": "linux64standaloneOutput",
+            "type": "filePath",
+            "label": "Output for 64-bit Linux Player",
+            "required": true,
+            "groupName": "targets",
+            "helpMarkDown": "",
+            "visibleRule": "linux64standalone = true"
+        },
+        {
+            "name": "linuxUniversal",
+            "type": "boolean",
+            "label": "Universal Linux player",
+            "defaultValue": "false",
+            "required": false,
+            "helpMarkDown": "",
+            "groupName": "targets"
+        },
+        {
+            "name": "linuxUniversalOutput",
+            "type": "filePath",
+            "label": "Output for Universal Linux Player",
+            "required": true,
+            "groupName": "targets",
+            "helpMarkDown": "",
+            "visibleRule": "linuxUniversal = true"
+        }
+    ],
+    "execution": {
+        "Node": {
+            "target": "index.js"
+        }
+    }
 }

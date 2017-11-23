@@ -1,36 +1,36 @@
 {
-    "manifestVersion":  1,
-    "id":  "unity-build-task",
-    "name":  "Unity build",
-    "version":  "1.0.2",
-    "publisher":  "jonsth131",
-    "targets":  [
-                    {
-                        "id":  "Microsoft.VisualStudio.Services"
-                    }
-                ],
-    "description":  "Build task for Unity projects",
-    "categories":  [
-                       "Build and release"
-                   ],
-    "icons":  {
-                  "default":  "icon.png"
-              },
-    "files":  [
-                  {
-                      "path":  "task"
-                  }
-              ],
-    "repository":  {
-                       "type":  "git",
-                       "uri":  "https://github.com/jonsth131/vss-extensions"
-                   },
-    "contributions":  [
-                          {
-                              "id":  "unity-build-task",
-                              "type":  "ms.vss-distributed-task.task",
-                              "targets":  "ms.vss-distributed-task.tasks",
-                              "properties":  "@{name=task}"
-                          }
-                      ]
+    "manifestVersion": 1,
+    "id": "unity-build-task",
+    "name": "Unity build",
+    "version": "1.0.2",
+    "publisher": "jonsth131",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "description": "Build task for Unity projects",
+    "categories": [
+        "Build and release"
+    ],
+    "icons": {
+        "default": "icon.png"
+    },
+    "files": [
+        {
+            "path": "task"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/jonsth131/vss-extensions"
+    },
+    "contributions": [
+        {
+            "id": "unity-build-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": "ms.vss-distributed-task.tasks",
+            "properties": "@{name=task}"
+        }
+    ]
 }
