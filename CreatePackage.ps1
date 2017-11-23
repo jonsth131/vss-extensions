@@ -17,7 +17,7 @@ Write-Output "Updating version"
 
 Write-Output "Cleaning old builds"
 if (Test-Path $taskOutputDir) {
-    Remove-Item .\task -Force -Recurse
+    Remove-Item $taskOutputDir -Force -Recurse
 }
 mkdir $taskOutputDir
 
