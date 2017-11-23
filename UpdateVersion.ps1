@@ -14,8 +14,8 @@ if (!(Test-Path $extension)) {
 
 Set-Location $extension
 
-$taskJsonPath = "$extension\task.json"
-$packageJsonPath = "$extension\package.json"
+$taskJsonPath = ".\source\task.json"
+$packageJsonPath = ".\source\package.json"
 $vssExtensionJsonPath = ".\vss-extension.json"
 
 Write-Output "Getting version information from $taskJsonPath"

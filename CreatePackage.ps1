@@ -7,7 +7,7 @@ Param(
 )
 
 $taskOutputDir = ".\task"
-
+$sourceDir = ".\source"
 
 Write-Output "Building $extensionType extension $extension"
 Set-Location -Path $extensionType
@@ -21,16 +21,16 @@ if (Test-Path $taskOutputDir) {
 }
 mkdir $taskOutputDir
 
-Set-Location -Path $extension
+Set-Location -Path $sourceDir
 
 Write-Output "Compiling TypeScript"
 & tsc
 
 Write-Output "Copying files to compile folder"
 Set-Location ..
-Copy-Item .\$extension\*.js $taskOutputDir
-Copy-Item .\$extension\*.json $taskOutputDir
-Copy-Item .\$extension\*.png $taskOutputDir
+Copy-Item .\$sourceDir\*.js $taskOutputDir
+Copy-Item .\$sourceDir\*.json $taskOutputDir
+Copy-Item .\$sourceDir\*.png $taskOutputDir
 
 Write-Output "Restoring dependencies"
 Set-Location $taskOutputDir
