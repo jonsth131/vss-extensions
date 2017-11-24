@@ -11,21 +11,7 @@ async function run() {
         let projectPath: string = tl.getPathInput('projectPath', true, true);
 
         let tool: trm.ToolRunner;
-        let unityPath: string;
-
-        let x86winPath = "C:\\Program Files (x86)\\Unity\\Editor\\Unity.exe";
-        let x64winPath = "C:\\Program Files\\Unity\\Editor\\Unity.exe";
-        let macOsPath = "/Applications/Unity/Unity.app/Contents/MacOS/Unity";
-
-        if (fs.existsSync(x86winPath)) {
-            unityPath = x86winPath;
-        }
-        if (fs.existsSync(x64winPath)) {
-            unityPath = x64winPath;
-        }
-        if (fs.existsSync(macOsPath)) {
-            unityPath = macOsPath;
-        }
+        let unityPath = getUnityPath();
 
         tool = tl.tool(unityPath).arg('-batchmode').arg('-quit').arg('-nographics').arg('-projectPath').arg(projectPath);
         
@@ -36,6 +22,24 @@ async function run() {
     catch (err) {
         tl.setResult(tl.TaskResult.Failed, err.message);
     }
+}
+
+async function getUnityPath() : Promise<string> {
+    let x86winPath = "C:\\Program Files (x86)\\Unity\\Editor\\Unity.exe";
+    let x64winPath = "C:\\Program Files\\Unity\\Editor\\Unity.exe";
+    let macOsPath = "/Applications/Unity/Unity.app/Contents/MacOS/Unity";
+
+    if (fs.existsSync(x86winPath)) {
+        return x86winPath;
+    }
+    if (fs.existsSync(x64winPath)) {
+        return x64winPath;
+    }
+    if (fs.existsSync(macOsPath)) {
+        return macOsPath;
+    }
+
+    return "";
 }
 
 async function addTargetsToArgList(tool: trm.ToolRunner) {
