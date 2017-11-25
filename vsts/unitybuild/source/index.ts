@@ -11,7 +11,7 @@ async function run() {
         let projectPath: string = tl.getPathInput('projectPath', true, true);
 
         let tool: trm.ToolRunner;
-        let unityPath = getUnityPath();
+        let unityPath = await getUnityPath();
 
         tool = tl.tool(unityPath).arg('-batchmode').arg('-quit').arg('-nographics').arg('-projectPath').arg(projectPath);
         
@@ -25,6 +25,12 @@ async function run() {
 }
 
 async function getUnityPath() : Promise<string> {
+    let customPath = tl.getInput('unityPath');
+
+    if (customPath) {
+        return customPath;
+    }
+
     let x86winPath = "C:\\Program Files (x86)\\Unity\\Editor\\Unity.exe";
     let x64winPath = "C:\\Program Files\\Unity\\Editor\\Unity.exe";
     let macOsPath = "/Applications/Unity/Unity.app/Contents/MacOS/Unity";

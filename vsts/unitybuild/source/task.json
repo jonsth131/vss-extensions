@@ -40,6 +40,14 @@
             "helpMarkDown": "Path to the Unity project to build"
         },
         {
+            "name": "unityPath",
+            "type": "string",
+            "label": "Path to Unity",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "Optionally provite a path to Unity"
+        },
+        {
             "name": "win32standalone",
             "type": "boolean",
             "label": "32-bit Windows player",
