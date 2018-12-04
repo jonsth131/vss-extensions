@@ -9,6 +9,9 @@ mkdir $taskOutputDir
 
 Set-Location -Path $sourceDir
 
+Write-Output "Removing old js-files"
+Remove-Item .\*.js
+
 Write-Output "Compiling TypeScript"
 & tsc
 
