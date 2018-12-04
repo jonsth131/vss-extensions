@@ -1,22 +1,22 @@
-import tl = require('azure-pipelines-task-lib/task');
-import path = require('path');
-import { ToolRunner } from 'azure-pipelines-task-lib/toolrunner';
+import * as tl from "azure-pipelines-task-lib/task";
+import * as path from "path";
+import { ToolRunner, IExecSyncResult } from "azure-pipelines-task-lib/toolrunner";
 
-async function run() {
+async function run(): Promise<void> {
     try {
-        tl.setResourcePath(path.join(__dirname, 'task.json'));
+        tl.setResourcePath(path.join(__dirname, "task.json"));
         const cwd: string = tl.getPathInput("path", true);
-        const level: string = tl.getInput('level', true);
+        const level: string = tl.getInput("level", true);
         const toolPath: string = tl.which("npm", true);
         const toolRunner: ToolRunner = tl.tool(toolPath).arg("audit");
 
         tl.cd(cwd);
-        const result = toolRunner.execSync();
+        const result: IExecSyncResult = toolRunner.execSync();
 
         if (result.code !== 0) {
             const regexp: RegExp = await getLevelRegexp(level);
 
-            const shouldBreak = regexp.test(result.stdout);
+            const shouldBreak: boolean = regexp.test(result.stdout);
 
             if (shouldBreak) {
                 console.log(tl.loc("VulnerabilitiesFound"));
@@ -25,8 +25,7 @@ async function run() {
                 console.log(tl.loc("VulnerabilitiesFoundButLowerLevel"));
             }
         }
-    }
-    catch (err) {
+    } catch (err) {
         tl.setResult(tl.TaskResult.Failed, err.message);
     }
 }

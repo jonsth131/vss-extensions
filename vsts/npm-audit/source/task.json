@@ -10,10 +10,13 @@
     "author": "jonsth131",
     "version": {
         "Major": 0,
-        "Minor": 1,
-        "Patch": 0
+        "Minor": 0,
+        "Patch": 2
     },
     "instanceNameFormat": "npm audit",
+    "demands": [
+        "node"
+    ],
     "inputs": [
         {
             "name": "path",
@@ -35,7 +38,7 @@
                 "moderate": "Moderate",
                 "high": "High",
                 "critical": "Critical"
-              }
+            }
         }
     ],
     "execution": {
