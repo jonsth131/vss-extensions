@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "npm-audit",
     "name": "Npm audit",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "publisher": "jonas-s",
     "targets": [
         {
@@ -14,7 +14,7 @@
         "Azure Pipelines"
     ],
     "icons": {
-        "default": "images/extension-icon.png"
+        "default": "extension-icon.png"
     },
     "files": [
         {
@@ -23,7 +23,7 @@
     ],
     "contributions": [
         {
-            "id": "custom-build-release-task",
+            "id": "npm-audit-build-task",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"

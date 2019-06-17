@@ -1,22 +1,21 @@
 {
+    "$schema": "https://raw.githubusercontent.com/microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
     "id": "7890f95d-fd3a-4e5e-8a26-58d1bd0d4e0b",
     "name": "npm-audit",
     "friendlyName": "Npm audit",
     "description": "Build step to run npm audit",
     "helpMarkDown": "",
-    "categories": [
-        "Azure Pipelines"
-    ],
-    "author": "jonsth131",
+    "author": "Jonas S",
     "version": {
-        "Major": 0,
+        "Major": 1,
         "Minor": 0,
-        "Patch": 2
+        "Patch": 0
     },
     "instanceNameFormat": "npm audit",
     "demands": [
-        "node"
+        "npm"
     ],
+    "category": "Utility",
     "inputs": [
         {
             "name": "path",
