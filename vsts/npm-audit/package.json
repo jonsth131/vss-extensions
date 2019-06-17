@@ -15,7 +15,10 @@
     "type": "git",
     "uri": "https://github.com/jonsth131/vss-extensions"
   },
-  "author": "jonsth131",
+  "bugs": {
+    "url": "https://github.com/jonsth131/vss-extensions/issues"
+  },
+  "author": "jonas-s",
   "license": "MIT",
   "dependencies": {
     "azure-pipelines-task-lib": "^2.7.7"
