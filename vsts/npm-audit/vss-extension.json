@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "npm-audit",
     "name": "Npm audit",
-    "version": "1.0.0",
+    "version": "0.0.5",
     "publisher": "jonas-s",
     "targets": [
         {
@@ -13,6 +13,31 @@
     "categories": [
         "Azure Pipelines"
     ],
+    "tags": [
+        "Azure Pipelines",
+        "Dependency check",
+        "Security"
+    ],
+    "content": {
+        "details": {
+          "path": "overview.md"
+        },
+        "license": {
+          "path": "license.txt"
+        }
+      },
+    "links": {
+        "repository": {
+          "uri": "https://github.com/jonsth131/vss-extensions"
+        },
+        "issues": {
+          "uri": "https://github.com/jonsth131/vss-extensions/issues"
+        }
+      },
+      "repository": {
+        "type": "git",
+        "uri": "https://github.com/jonsth131/vss-extensions"
+      },
     "icons": {
         "default": "extension-icon.png"
     },
